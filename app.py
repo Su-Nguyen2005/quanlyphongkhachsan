@@ -175,8 +175,7 @@ WHERE date(check_in) = ? AND status IN ('Đã đặt', 'Đang ở')
 False,
 )["total"]
 revenue = query_db(
-"SELECT COALESCE(SUM(paid_amount), 0) AS total FROM bookings
-WHERE status = 'Đã trả phòng'",
+"SELECT COALESCE(SUM(paid_amount), 0) AS total FROM bookings WHERE status = 'Đã trả phòng'"
 fetchall=False,
 )["total"]
 outstanding = query_db(
